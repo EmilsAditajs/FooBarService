@@ -143,6 +143,15 @@ class InfQixFooServiceTest extends TestCase
 
 
 
+    public function testIfSeveralOccurrencesAndMultiplesAndSumOfAllNrIsEightAndIsInfQixFooInfQixFooInf(): void
+    {
+        $service = new InfQixFooService();
+        $this->assertSame('Inf; Qix; Foo; Inf; Qix; FooInf', $service->checkNumber(8736));
+    }
+
+
+
+
     public function testIfNoTransformationsReturnString(): void
     {
         $service = new InfQixFooService();
