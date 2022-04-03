@@ -19,10 +19,34 @@ class ServiceTest extends TestCase
         $this->assertSame('Bar', $service->checkNumber(5));
     }
 
+    public function testIfMultipleOfSevenIsQix(): void
+    {
+        $service = new Service();
+        $this->assertSame('Qix', $service->checkNumber(14));
+    }
+
     public function testIfSeveralMultiplesIsFooBar(): void
     {
         $service = new Service();
         $this->assertSame('FooBar', $service->checkNumber(15));
+    }
+
+    public function testIfSeveralMultiplesIsBarQix(): void
+    {
+        $service = new Service();
+        $this->assertSame('BarQix', $service->checkNumber(35));
+    }
+
+    public function testIfSeveralMultiplesIsFooQix(): void
+    {
+        $service = new Service();
+        $this->assertSame('FooQix', $service->checkNumber(21));
+    }
+
+    public function testIfSeveralMultiplesIsFooBarQix(): void
+    {
+        $service = new Service();
+        $this->assertSame('FooBarQix', $service->checkNumber(105));
     }
 
     public function testIfNoMultiplesReturnString(): void
