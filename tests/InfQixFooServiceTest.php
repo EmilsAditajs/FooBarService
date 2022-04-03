@@ -23,7 +23,7 @@ class InfQixFooServiceTest extends TestCase
     public function testIfMultipleOfThreeIsFoo(): void
     {
         $service = new InfQixFooService();
-        $this->assertSame('Bar', $service->checkNumber(6));
+        $this->assertSame('Foo', $service->checkNumber(6));
     }
 
     public function testIfSeveralMultiplesIsInfQix(): void
