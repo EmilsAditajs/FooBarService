@@ -13,7 +13,7 @@ class Service
         return $number1 % $number2 == 0;
     }
 
-    public function checkNumber(int $input): string
+    public function checkAction(int $input): string
     {
         $foo = $this->foo;
         $bar = $this->bar;
@@ -47,6 +47,51 @@ class Service
             return 'Qix';
         }
 
-        return $input;
+        return '';
+    }
+
+
+    public function checkOccurrence(int $input): string
+    {
+        $foo = $this->foo;
+        $bar = $this->bar;
+        $qix = $this->qix;
+
+        if (str_contains($input, $foo) && str_contains($input, $bar) && str_contains($input, $qix)) {
+            return 'FooBarQix';
+        }
+
+        if (str_contains($input, $foo) && str_contains($input, $bar)) {
+            return 'FooBar';
+        }
+
+        if (str_contains($input, $foo) && str_contains($input, $qix)) {
+            return 'FooQix';
+        }
+
+        if (str_contains($input, $bar) && str_contains($input, $qix)) {
+            return 'BarQix';
+        }
+        if (str_contains($input, $foo)) {
+            return 'Foo';
+        }
+
+        if (str_contains($input, $bar)) {
+            return 'Bar';
+        }
+
+        if (str_contains($input, $qix)) {
+            return 'Qix';
+        }
+
+        return '';
+    }
+
+    public function checkNumber(int $input): string
+    {
+        if($this->checkAction($input) . $this->checkOccurrence($input) == '') {
+            return $input;
+        }
+        return $this->checkAction($input) . $this->checkOccurrence($input);
     }
 }

@@ -61,7 +61,7 @@ class ServiceTest extends TestCase
     public function testIfOccurrenceOfFiveIsBar(): void
     {
         $service = new Service();
-        $this->assertSame('Bar', $service->checkNumber(51));
+        $this->assertSame('Bar', $service->checkNumber(52));
     }
 
     public function testIfOccurrenceOfSevenIsQix(): void
@@ -100,7 +100,7 @@ class ServiceTest extends TestCase
     public function testIfOccurrenceAndMultipleOfThreeIsFooFoo(): void
     {
         $service = new Service();
-        $this->assertSame('FooFoo', $service->checkNumber(30));
+        $this->assertSame('FooFoo', $service->checkNumber(33));
     }
 
     public function testIfOccurrenceAndMultipleOfFiveIsBarBar(): void
@@ -112,7 +112,7 @@ class ServiceTest extends TestCase
     public function testIfOccurrenceAndMultipleOfSevenIsQixQix(): void
     {
         $service = new Service();
-        $this->assertSame('QixQix', $service->checkNumber(70));
+        $this->assertSame('QixQix', $service->checkNumber(77));
     }
 
     public function testIfSeveralOccurrencesAndMultiplesIsFooBarFooBar(): void
@@ -130,13 +130,13 @@ class ServiceTest extends TestCase
     public function testIfSeveralOccurrencesAndMultiplesIsFooQixFooQix(): void
     {
         $service = new Service();
-        $this->assertSame('FooQixFooQix', $service->checkNumber(373));
+        $this->assertSame('FooQixFooQix', $service->checkNumber(378));
     }
 
     public function testIfSeveralOccurrencesAndMultiplesIsFooBarQixFooBarQix(): void
     {
         $service = new Service();
-        $this->assertSame('FooBarQixFooBarQixFooBarQixFooBarQix', $service->checkNumber(735));
+        $this->assertSame('FooBarQixFooBarQix', $service->checkNumber(735));
     }
 
 
