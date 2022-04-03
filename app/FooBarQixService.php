@@ -2,7 +2,7 @@
 
 namespace App;
 
-class Service
+class FooBarQixService
 {
     private int $foo = 3;
     private int $bar = 5;
@@ -20,19 +20,19 @@ class Service
         $qix = $this->qix;
 
         if ($this->action($input, $foo) && $this->action($input, $bar) && $this->action($input, $qix)) {
-            return 'FooBarQix';
+            return 'Foo, Bar, Qix';
         }
 
         if ($this->action($input, $foo) && $this->action($input, $bar)) {
-            return 'FooBar';
+            return 'Foo, Bar';
         }
 
         if ($this->action($input, $foo) && $this->action($input, $qix)) {
-            return 'FooQix';
+            return 'Foo, Qix';
         }
 
         if ($this->action($input, $bar) && $this->action($input, $qix)) {
-            return 'BarQix';
+            return 'Bar, Qix';
         }
 
         if ($this->action($input, $foo)) {
@@ -58,19 +58,19 @@ class Service
         $qix = $this->qix;
 
         if (str_contains($input, $foo) && str_contains($input, $bar) && str_contains($input, $qix)) {
-            return 'FooBarQix';
+            return 'Foo, Bar, Qix';
         }
 
         if (str_contains($input, $foo) && str_contains($input, $bar)) {
-            return 'FooBar';
+            return 'Foo, Bar';
         }
 
         if (str_contains($input, $foo) && str_contains($input, $qix)) {
-            return 'FooQix';
+            return 'Foo, Qix';
         }
 
         if (str_contains($input, $bar) && str_contains($input, $qix)) {
-            return 'BarQix';
+            return 'Bar, Qix';
         }
         if (str_contains($input, $foo)) {
             return 'Foo';
@@ -92,6 +92,15 @@ class Service
         if($this->checkAction($input) . $this->checkOccurrence($input) == '') {
             return $input;
         }
-        return $this->checkAction($input) . $this->checkOccurrence($input);
+
+        if($this->checkAction($input) == '') {
+            return $this->checkOccurrence($input);
+        }
+
+        if($this->checkOccurrence($input) == '') {
+            return $this->checkAction($input);
+        }
+
+        return $this->checkAction($input) . ', ' . $this->checkOccurrence($input);
     }
 }
