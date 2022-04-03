@@ -101,7 +101,7 @@ class InfQixFooServiceTest extends TestCase
     public function testIfOccurrenceAndMultipleOfEightIsInfInf(): void
     {
         $service = new InfQixFooService();
-        $this->assertSame('Inf; Inf', $service->checkNumber(80));
+        $this->assertSame('Inf; Inf', $service->checkNumber(128));
     }
 
     public function testIfOccurrenceAndMultipleOfSevenIsQixQix(): void
@@ -135,15 +135,6 @@ class InfQixFooServiceTest extends TestCase
     }
 
     public function testIfSeveralOccurrencesAndMultiplesIsInfQixFooInfQixFoo(): void
-    {
-        $service = new InfQixFooService();
-        $this->assertSame('Inf; Qix; Foo; Inf; Qix; Foo', $service->checkNumber(8736));
-    }
-
-
-
-
-    public function testIfSeveralOccurrencesAndMultiplesAndSumOfAllNrIsEightAndIsInfQixFooInfQixFooInf(): void
     {
         $service = new InfQixFooService();
         $this->assertSame('Inf; Qix; Foo; Inf; Qix; FooInf', $service->checkNumber(8736));

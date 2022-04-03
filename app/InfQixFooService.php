@@ -80,6 +80,19 @@ class InfQixFooService
         return implode('; ', $result);
     }
 
+    public function checkSumOfNumbers(int $input): string
+    {
+        $inf = $this->inf;
+
+        $input = str_split($input);
+
+        if(array_sum($input) % $inf == 0) {
+            return 'Inf';
+        }
+
+        return '';
+    }
+
 
     public function checkNumber(int $input): string
     {
@@ -95,6 +108,6 @@ class InfQixFooService
             return $this->checkAction($input);
         }
 
-        return $this->checkAction($input) . '; ' . $this->checkOccurrence($input);
+        return $this->checkAction($input) . '; ' . $this->checkOccurrence($input) . $this->checkSumOfNumbers($input);
     }
 }
