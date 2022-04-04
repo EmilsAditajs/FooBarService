@@ -8,12 +8,12 @@ class FooBarQixService
     private int $bar = 5;
     private int $qix = 7;
 
-    public function action(int $number1, int $number2): bool
+    private function action(int $number1, int $number2): bool
     {
         return $number1 % $number2 == 0;
     }
 
-    public function checkAction(int $input): string
+    private function checkAction(int $input): string
     {
         $foo = $this->foo;
         $bar = $this->bar;
@@ -51,7 +51,7 @@ class FooBarQixService
     }
 
 
-    public function checkOccurrence(int $input): string
+    private function checkOccurrence(int $input): string
     {
         $foo = $this->foo;
         $bar = $this->bar;

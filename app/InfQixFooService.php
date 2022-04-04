@@ -8,12 +8,12 @@ class InfQixFooService
     private int $qix = 7;
     private int $foo = 3;
 
-    public function action(int $number1, int $number2): bool
+    private function action(int $number1, int $number2): bool
     {
         return $number1 % $number2 == 0;
     }
 
-    public function checkAction(int $input): string
+    private function checkAction(int $input): string
     {
         $inf = $this->inf;
         $qix = $this->qix;
@@ -51,7 +51,7 @@ class InfQixFooService
     }
 
 
-    public function checkOccurrence(int $input): string
+    private function checkOccurrence(int $input): string
     {
         $inf = $this->inf;
         $qix = $this->qix;
@@ -80,7 +80,7 @@ class InfQixFooService
         return implode('; ', $result);
     }
 
-    public function checkSumOfNumbers(int $input): string
+    private function checkSumOfNumbers(int $input): string
     {
         $inf = $this->inf;
 
